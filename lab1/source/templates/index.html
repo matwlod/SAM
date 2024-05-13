@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Video Example</title>
+</head>
+<body>
+    {%if vid%}
+  <h2>Video</h2>
+  <video width="320" height="240" controls>
+    <source src={{ vid }} type="video/mp4">
+  </video>
+  {%else%}
+  <h2>no video path given</h2> 
+    {%endif%}
+    {%if audio%}
+    <h2>Audio</h2>
+    <audio controls autoplay><source src={{ audio }} type="audio/mpeg"></audio>
+
+    </video>
+    {%else%}
+  <h2>no audio path given</h2> 
+      {%endif%}
+</body>
+</html>
