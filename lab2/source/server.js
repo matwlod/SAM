@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
             document.getElementById("videoPlayer").src="cancel.mp4";
         }
         function cancelImg() {
-            document.getElementById("posterImage").src="cancel.img";
+            document.getElementById("posterImage").src="cancel.jpg";
         }
 
         function cancelAudio() {
