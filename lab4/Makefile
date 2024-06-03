@@ -1,4 +1,4 @@
-lab_id:=lab3
+lab_id:=lab4
 student_id:=240833
 docker_name:=$(lab_id)_$(student_id)_js
 container_name:=$(docker_name)_container
