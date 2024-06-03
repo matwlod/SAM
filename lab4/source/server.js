@@ -41,6 +41,7 @@ app.get('/', (req, res) => {
             <th>No.</th>
             <th>URL</th>
             <th>Type</th>
+            <th>Action</th>
         </tr>
     </table>`
 
@@ -56,7 +57,24 @@ app.get('/', (req, res) => {
         row.insertCell(0).innerText = i;
         row.insertCell(1).innerText = src;
         row.insertCell(2).innerText = "Video";
-    
+        let removeRow = row.insertCell(3);
+
+        let removeButton = document.createElement('button');
+        removeButton.classList.add('removeRowButton');
+        removeButton.textContent = 'Delete';
+        removeButton.addEventListener('click', (event) => {
+            let button = event.target;
+            let row = button.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+            
+            if (table.rows.length == 1)
+            	i = table.rows.length;
+            for (let id = 1; id < table.rows.length; id++) {
+                table.rows[id].cells[0].innerText = id;
+                i = id + 1;
+            }
+        });
+        removeRow.appendChild(removeButton);
         i++;
     }
     function addImageToTable() {
@@ -69,7 +87,24 @@ app.get('/', (req, res) => {
         row.insertCell(0).innerText = i;
         row.insertCell(1).innerText = src;
         row.insertCell(2).innerText = "Image";
-    
+        let removeRow = row.insertCell(3);
+
+        let removeButton = document.createElement('button');
+        removeButton.classList.add('removeRowButton');
+        removeButton.textContent = 'Delete';
+        removeButton.addEventListener('click', (event) => {
+            let button = event.target;
+            let row = button.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+            
+            if (table.rows.length == 1)
+            	i = table.rows.length;
+            for (let id = 1; id < table.rows.length; id++) {
+                table.rows[id].cells[0].innerText = id;
+                i = id + 1;
+            }
+        });
+        removeRow.appendChild(removeButton);
         i++;
     }
     function addAudioToTable() {
@@ -82,7 +117,24 @@ app.get('/', (req, res) => {
         row.insertCell(0).innerText = i;
         row.insertCell(1).innerText = src;
         row.insertCell(2).innerText = "Audio";
-    
+        let removeRow = row.insertCell(3);
+
+        let removeButton = document.createElement('button');
+        removeButton.classList.add('removeRowButton');
+        removeButton.textContent = 'Delete';
+        removeButton.addEventListener('click', (event) => {
+            let button = event.target;
+            let row = button.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+            
+            if (table.rows.length == 1)
+            	i = table.rows.length;
+            for (let id = 1; id < table.rows.length; id++) {
+                table.rows[id].cells[0].innerText = id;
+                i = id + 1;
+            }
+        });
+        removeRow.appendChild(removeButton);
         i++;
     }
         function cancelVideo() {
